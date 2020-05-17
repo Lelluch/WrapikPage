@@ -1,0 +1,116 @@
+.bg-lastSection {
+  background-color: $lastSection-bg-color;
+  min-height: $lastSection-height;
+  padding-top: $mb * 4.95;
+  box-sizing: border-box;
+}
+.lastSection {
+  display: flex;
+  justify-content: $space;
+  flex-wrap: wrap;
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    &-title {
+      margin-bottom: $mb * 0.9;
+      font-family: $ff-someText;
+      font-size: $font-main * 1.7;
+    }
+    &-mail,
+    &-tel,
+    &-adress {
+      color: $text-color-main;
+      margin-bottom: $mb * 0.9;
+      &:hover {
+        color: darken($color: $text-color-second, $amount: 50%);
+      }
+    }
+    &-mail-icon,
+    &-tel-icon,
+    &-adress-icon {
+      color: $text-color-second;
+    }
+  }
+  &-list {
+    padding: $zero-size;
+    &-item {
+      margin-bottom: $mb * 0.9;
+      &-link {
+        color: $text-color-second;
+        &:hover {
+          color: darken($color: $text-color-second, $amount: 20%);
+        }
+      }
+    }
+  }
+  &-news-form {
+    &-send {
+      border: $b-radius;
+      background-color: $search-bg-color;
+      max-width: $search-palace-width;
+      height: $search-input-height;
+      padding: 0 $search-pl-pr;
+      display: flex;
+      justify-content: $space;
+      align-items: $position;
+      &-input {
+        display: inline-block;
+        background-color: $search-bg-color;
+        border: none;
+        &::placeholder {
+          color: $text-color-second;
+        }
+      }
+      &-submit {
+        width: $search-submit-width-height;
+        height: $search-submit-width-height;
+        border: none;
+        background-image: url(images/plan.png);
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media screen and (max-width: 810px) {
+  .lastSection{
+    &-news {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: $mb;
+    }
+    &-title {
+      order: 0;
+    }
+    &-news-form {
+      order: 1;
+      align-self: $position;
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    &-news-text {
+      order: 2;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .lastSection{
+    &-mainLinks,&-otherLinks{
+      display: none;
+    }
+    // &-contacts{
+    //   width: 40%;
+    // }
+    &-news {
+      display: inline-block;
+    }
+    &-news-form {
+      &-send{
+          margin-bottom: $mb;
+      }
+    }
+  }
+}

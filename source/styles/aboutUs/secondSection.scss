@@ -1,0 +1,43 @@
+.bg-secondSection {
+  background-color: $secondSection-bg-color;
+  min-height: $Sections-height;
+  padding-top: $mb * 3.85;
+  box-sizing: border-box;
+}
+.secondSection-header > .sections-header-text {
+    margin-bottom: $mb * 4.45;
+}
+.secondSection {
+  &-blocks{
+    display: flex;
+    justify-content: space-around;
+    &-img{
+      margin-bottom: $mb * 0.9;
+    }
+    &-title{
+      font-size: $font-main * 1.16;
+      margin-bottom: $mb * 0.35;
+    }
+    &-text{
+      font-size: $font-main * 1.08;
+      color: $text-color-second;
+    }
+  }
+}
+@media screen and (max-width: 810px){
+    .secondSection{
+        &-sides {
+            flex-direction: column;
+            justify-content: $position;
+        }
+        &-leftSide{
+            width: auto;
+            order: 1;
+            margin-right: $zero-size;
+        }
+        &-rightSide{
+            order: 0;
+            margin: 0 auto;
+        }
+    }
+}

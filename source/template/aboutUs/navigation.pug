@@ -1,0 +1,12 @@
+.header-sides
+            nav.header-left
+                a.header-home-link(href="#") Wapik
+                a.header-tel(href="tel:+622025550117")
+                    img.header-tel-img(src="images/header-phone.png" alt="tel:")
+                    span.header-tel-text +62 202 555 0117
+            nav.header-right
+                .header-hidden-block
+                    a.btn.header-hidden-block-menu(href="#") =
+                - var values = ['Home','About us', 'Pricing', 'Contact us','Get started'];
+                each val in values
+                    a.nav-links(href="#")= val

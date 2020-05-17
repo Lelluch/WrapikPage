@@ -1,0 +1,154 @@
+.bg-header{
+    display: grid;
+    background-image: url(images/header2.png);
+    background-size: cover;
+    position: relative;
+    background-position: $position;
+    align-content: $position;
+
+    &::before {
+        content: "";
+        background-color: $header-bg-color;
+        position: absolute;
+        top: $zero-size;
+        left: $zero-size;
+        bottom: $zero-size;
+        right: $zero-size;
+        opacity: 0.9;
+    }
+    .header{
+        width: 100%;
+        z-index: 1;
+        height: $header-height;
+        &-sides{
+            display: flex;
+            justify-content: $space;
+        }
+        &-left,&-right{
+            display: flex;
+            align-items: $position;
+            height: $nav-height;
+        }
+        &-hidden-block{
+            display: none;
+            padding: $nav-lastChild-padding;
+            &-menu{
+                border:2px solid $header-unActivLinks-color;
+                color:$header-unActivLinks-color;
+                font-size: $font-main*2;
+                padding: $nav-lastChild-padding;
+                margin-right: $nav-rightSide-space;
+            }
+        }
+        &-home-link,&-tel-text,&-title,&-text,&-btn{
+            color:$text-color-header;
+        }
+        &-home-link{
+            font-family: $ff-someText;
+            font-size: $font-main*2.2;
+            font-weight: $font-weight-bold;
+            padding-right: $nav-leftSide-space/2;
+            border-right: 1px solid $header-unActivLinks-color;
+            transition: 0.5s;
+            &:hover{
+                color: darken($color: $text-color-header, $amount: 100%);
+            }
+        }
+        &-home-link,.nav-links{
+            text-transform: uppercase;
+        }
+        &-tel{
+            padding-left: $nav-leftSide-space/2;
+        }
+        &-tel-text{
+            padding-left: $nav-leftSide-space/10;
+            transition: 0.5s;
+            &:hover{
+                color: darken($color: $text-color-header, $amount: 100%);
+            }
+        }
+        &-main{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: $position;
+            align-items: $position;
+            height: $header-height - $nav-height;
+        }
+        &-text {
+            font-size: $font-main * 3.85;
+            width: 80%;
+            text-align: $position;
+            margin-bottom: $mb * 1.5;
+        }       
+        &-btn{          
+            padding: $header-btn-pt-pb $header-btn-pl-pr;
+        }
+        &-tel-text,.nav-links{
+            font-family: $ff-btn;
+        }
+        .nav-links{
+            color:$header-unActivLinks-color; 
+            margin-right: $nav-rightSide-space; 
+            transition: 0.5s;
+            &:last-child{
+                margin-right: $zero-size;
+                color:$text-color-header;
+                padding: $nav-lastChild-padding;
+                background-color: rgba($color: $btn-color-shop, $alpha: 0.8);
+                border-radius: $b-radius;              
+                &:hover{
+                    background-color: $btn-color-main;
+                }
+            }
+            &:hover{
+                color:$text-color-header;
+            }
+        }
+    }
+    @media screen and (max-width: 810px){
+        .nav-links{
+            display: none;
+        }
+        .header-hidden-block{
+            display: block;
+            &-menu{
+                margin-right: $zero-size;
+            }
+        }
+    }
+    @media screen and (max-width: 500px){
+        .header{       
+            &-text{
+                width: auto;
+                font-size: $font-main * 2.47;
+                margin-bottom: $mb * 2.5;
+            }
+            &-home-link{
+                padding-right: $nav-leftSide-space/4;
+            }
+            &-tel{
+                padding-left: $nav-leftSide-space/4;
+            }
+        }  
+    }
+    @media screen and (max-width: 370px){
+        .header{
+            &-left{
+                display: flex;
+                flex-direction: column;
+            }
+            &-home-link{
+                border: none;
+                margin-bottom: $mb/2;
+            }
+            &-title{
+                font-size: $font-main * 2;
+            }
+            &-text{
+                font-size: $font-main * 2;
+                
+            }
+        }   
+    }
+}

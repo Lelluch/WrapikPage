@@ -1,0 +1,60 @@
+.bg-firstSection{
+    background-color: $firstSection-bg-color;
+    min-height: $Sections-height;
+    padding-top: $mb * 4;
+    box-sizing: border-box;
+}
+.firstSection-top{
+    display: flex;
+    justify-content: $space;
+    flex-wrap: wrap;
+    margin-top: $mb * 1.4;
+    &-block{
+        max-width: 29%;
+        text-align: $position;
+    }
+    &-img{
+        margin-bottom: $mb * 1.25;
+    }
+    &-title{
+        font-size: $font-main * 1.24;
+        margin-bottom: $mb * 1.15;
+    }
+    &-text{
+        color: $text-color-second;
+    }
+}
+@media screen and (max-width: 810px){
+    .bg-firstSection{
+        min-height: $firstSection-height *0.9;
+    }
+    .firstSection-top{
+        &-text{
+            margin-bottom: $mb * 5;
+        }
+    }
+    .firstSection-bottom{
+        &-block{
+            max-width: 48%;
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .firstSection-top{
+        margin-top: $zero-size;
+        justify-content: $position;
+        &-block{
+            max-width: 45%;
+        }
+        &-text{
+            margin-bottom: $mb * 3;
+        }
+    }
+}
+@media screen and (max-width: 370px){
+    .firstSection-top{
+        &-block{
+            max-width: 90%;
+        }
+    }
+}
