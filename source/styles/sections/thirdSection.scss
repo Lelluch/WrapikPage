@@ -1,0 +1,96 @@
+.bg-thirdSection {
+  background-color: $thirdSection-bg-color;
+  min-height: $Sections-height;
+  padding-top: $mb * 7.1;
+  box-sizing: border-box;
+}
+.thirdSection {
+  display: flex;
+  justify-content: $space;
+  &-leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: $position;
+    max-width: 52%;
+    color: $text-color-second;
+    &-text {
+      font-family: $ff-someText;
+      font-size: $font-main * 1.7;
+      margin-bottom: $mb * 1.35;
+    }
+    &-author {
+      color: $btn-color-main;
+      margin-bottom: $mb / 2;
+    }
+  }
+  &-rightSide {
+    display: flex;
+    position: relative;
+    &-leftArrow, &-rightArrow{
+      visibility: hidden;
+      display: flex;
+      justify-content: $position;
+      align-items: $position;
+      width: 15%;
+      height: 80%;
+      z-index: 1;
+      background-color: #ffff;
+      opacity: 0.5;
+      font-size: 50px;
+      position: absolute;
+      top: 10%;
+      cursor: pointer;
+    }
+    &-leftArrow{
+     left: -10%;
+    }
+    &-rightArrow{
+      right: -10%;
+    }
+    &-foto {
+      max-width: $foto-width;
+      min-height: $foto-height;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+  }
+}
+@media screen and (max-width: 810px) {
+  .thirdSection-leftSide {
+    margin-right: $mb;
+  }
+}
+@media screen and (max-width: 710px) {
+    .bg-thirdSection{
+        padding-top: $mb * 5;
+    }
+  .thirdSection {
+      flex-wrap: wrap;
+      justify-content: $position;
+    &-leftSide {
+      order: 1;
+      max-width: 90%;
+      margin-right: $zero-size;
+      &-office{
+          margin-bottom: $mb * 5;
+      }
+    }
+    &-rightSide {
+      order: 0;
+      margin-bottom: $mb;
+    }
+  }
+}
+@media screen and (max-width: 370px){
+    .thirdSection {
+        flex-wrap: wrap;
+        justify-content: $position;
+      &-rightSide {
+        max-width: 90%;
+        &-foto{
+            max-width: 100%;
+            min-height: 100%;
+        }
+      }
+    }
+}

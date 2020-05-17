@@ -1,0 +1,28 @@
+.bg-lastSection
+    section.container.lastSection
+        .lastSection-contacts
+            h3.lastSection-contacts-title wapik
+            a.lastSection-contacts-mail(href="mail:hi@wapik.com")
+                span.lastSection-contacts-mail-icon @:
+                | &nbsp;hi@wapik.com
+            a.lastSection-contacts-tel(href="tel:+622025550117")
+                span.lastSection-contacts-mail-icon p:
+                | &nbsp;+62 202 555 0117
+            a.lastSection-contacts-adress(href="#")
+                span.lastSection-contacts-mail-icon a:
+                | &nbsp;610 Overlook Circle Suite 323
+                br
+                | &nbsp;&nbsp;&nbsp;&nbsp;Kalamazoo, MI 49009
+        .lastSection-mainLinks
+            h3.lastSection-title Company
+            +linksListCreator(['Home','About Us','Pricing','Contact Us'],'lastSection')
+        .lastSection-otherLinks
+            h3.lastSection-title Others
+            +linksListCreator(['Help & Support','Privacy Policy','Terms','Sitemap'],'lastSection')
+        .lastSection-news
+            h3.lastSection-title Newsletter
+            p.lastSection-news-text Subscribe to our newsletter and get all the cool news
+            form.lastSection-news-form
+                .lastSection-news-form-send
+                    input.lastSection-news-form-send-input(type="email" placeholder="Enter Email")
+                    input.lastSection-news-form-send-submit(type="submit" value='')

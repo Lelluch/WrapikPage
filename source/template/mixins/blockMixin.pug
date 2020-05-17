@@ -1,0 +1,33 @@
+mixin block (url,head,text,className)
+    div(class=className + "-block")
+        img(class=className + "-img",  src=url, alt="picture")
+        h3(class=className + "-title")=head
+        p(class=className + "-text")=text
+
+mixin sectionsHeader (head,text,className)
+    h2(class=className + "-title")=head
+    hr(class=className + "-line")
+    if(text)
+        p(class=className + "-text")=text
+
+mixin listCreator (url,text,className)
+    ul(class=className + "-list")
+        each val in text
+            li(class=className + "-list-item")
+                if(url)
+                    img(class=className + "-list-item-img",  src=url, alt="picture")
+                p(class=className + "-list-item-text")=val
+
+mixin shopItems (name,price,text,btnText,className)
+    div(class=className + "-block")
+        h3(class=className + "-block-title")=name      
+        p(class=className + "-block-price")!=price 
+            p(class=className + "-block-forMonth")="/month"
+        p(class=className + "-block-text")!=text
+        a(href="#" class=className +"-block-btn btn")=btnText
+
+mixin linksListCreator (text,className)
+    ul(class=className + "-list")
+            each val in text
+                li(class=className + "-list-item")  
+                    a(href="#" class=className + "-list-item-link")=val

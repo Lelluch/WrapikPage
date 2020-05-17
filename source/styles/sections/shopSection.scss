@@ -1,0 +1,84 @@
+.bg-shopSection{
+    background-color: $shopSection-bg-color;
+    min-height: $shopSection-height;
+    padding-top: $mb * 4.85;
+    box-sizing: border-box;
+}
+.shopSection{
+    &-header > .sections-header-text{
+        margin-bottom: $mb * 2.15;    
+    }
+    &-blocks{
+        display: flex;
+        justify-content: $position;
+        &-block{
+            width: 24%;
+            border-top: 2px solid $border-color-shop;
+            border-bottom: 2px solid $border-color-shop;
+            border-left: 2px solid $border-color-shop;
+            border-right: none;
+            display: flex;
+            flex-direction: column;
+            align-items: $position;
+            &:last-child{
+                border-right: 2px solid $border-color-shop;
+            }
+            &-title,&-price,&-forMonth,&-text{
+                text-align: $position;
+            }
+            &-title{
+                font-size: $font-main *1.16;
+                text-transform: uppercase;
+                color: $text-color-shop;
+                margin-top: $mb * 1.45;
+                margin-bottom: $mb * 1.35;
+            }
+            &-price{
+                font-family: $ff-btn;
+                font-size: $font-main * 5;
+                font-weight: $font-weight-price;
+                margin-bottom: $zero-size;
+                line-height: 1;
+            }
+            &-text,&-forMonth{
+                font-size: $font-main * 1.08;
+            }
+            &-forMonth{
+                margin-bottom: $mb;
+            }
+            &-text{
+                line-height: 1.5;
+                margin-bottom: $mb * 1.2;
+                color: $text-color-second;
+            }
+            &-btn{
+                padding: $shop-btn-pt-pb $shop-btn-pl-pr;
+                margin-bottom: $mb * 1.5;
+            }
+        }
+    }
+}
+@media screen and (max-width: 810px) {
+    .shopSection-blocks-block{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .shopSection-blocks{
+        flex-direction: column;
+        align-items: $position;
+        &-block{
+            width: 75%;
+            border-right: 2px solid $border-color-shop;
+            border-bottom: none;
+            &:last-child{
+                border-bottom: 2px solid $border-color-shop;  
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .shopSection-blocks-block{
+        width: 90%;
+    }
+}

@@ -1,0 +1,51 @@
+.bg-fourthSection {
+  background-color: $fourthSection-bg-color;
+  min-height: $fourthSection-height;
+  padding-top: $mb * 3.1;
+  box-sizing: border-box;
+}
+.fourthSection{
+    display: flex;
+    justify-content: $space;
+    margin: 0 auto;
+    max-width: 1500px;
+    &-leftSide{
+        align-self: $position;
+        margin-left: auto;
+        margin-right: $mb * 3;
+        &-title,&-text{
+            text-align: start;
+        }
+        &-text{
+            line-height: 1.5;
+        }
+    }
+}
+@media screen and (max-width: 1300px) {
+    .fourthSection-leftSide{
+        margin-left: $mb;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .bg-fourthSection{
+        min-height: $fourthSection-height * 0.8;
+    }
+}
+@media screen and (max-width: 810px) {
+    .fourthSection{
+        justify-content: $position;
+        flex-wrap: wrap;
+        &-leftSide{
+            order: 1;
+            margin: 0;
+            margin: $zero-size $mb $mb $mb;
+            &-text{
+                margin-bottom: $zero-size;
+            }
+        }
+        &-rightSide{
+            order: 0;
+            margin: $zero-size $mb $mb $mb;
+        }
+    }
+}

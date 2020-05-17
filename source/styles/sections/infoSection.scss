@@ -1,0 +1,39 @@
+.bg-infoSection{
+    background-color: $infoSection-bg-color;
+    min-height: $infoSection-height;
+    padding-top: $mb * 3.95;
+    box-sizing: border-box;
+}
+.infoSection-header > .sections-header-title{
+    font-size: $font-main * 1.7;
+}
+.infoSection-header > .sections-header-line{
+    margin-bottom: $mb * 1.7;
+}
+.infoSection{
+    &-blocks{
+        display: flex;
+        justify-content: $space;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 810px){
+    .infoSection{
+        &-blocks{
+            justify-content: $position;
+        }
+        &-blocks >.sections-list:nth-child(2n+1){
+            margin-right: $mb * 6;
+        }
+    }
+}
+@media screen and (max-width: 320px){
+    .infoSection{
+        &-blocks{
+            width: 80%;
+        }
+        &-blocks >.sections-list:nth-child(2n+1){
+            margin-right: $zero-size;
+        }
+    }
+}
