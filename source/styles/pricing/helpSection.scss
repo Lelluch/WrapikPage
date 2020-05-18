@@ -1,0 +1,24 @@
+.bg-helpSection{
+    background-color: $helpSection-bg-color;
+    min-height: $helpSection-height;
+    padding-top: $mb * 1.85;
+    box-sizing: border-box;
+}
+.helpSection{
+    &-header{
+        &-img{
+            margin-bottom: $mb * 0.85;
+        }
+    }
+    &-header > .sections-header-title{
+        color: $line-color-main;
+    }
+    &-header > .sections-header-text{
+        margin-bottom: $mb * 1.85;
+    }
+    &-mail{
+        color: $text-color-main;
+        text-align: $position;
+        font-size: $font-main * 1.39;
+    }
+}

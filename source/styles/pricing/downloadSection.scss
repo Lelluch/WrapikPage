@@ -1,0 +1,45 @@
+.bg-downloadSection{
+    background-color: $firstSection-bg-color;
+    min-height: $downloadSection-height;
+    background-image: url(images/section.png);
+    padding-top: $mb * 3.75;
+    box-sizing: border-box;
+}
+.downloadSection{
+    display: flex;
+    justify-content: $space;
+    align-items: $position;
+    &-leftSide{
+        &-title{
+            font-size: $font-main * 2.16;
+            margin-bottom: $mb * 0.6;
+        }
+        &-text{
+            color: $text-color-second;
+        }
+    }
+    &-rightSide{
+        &-btn{
+            display: inline-block;
+            padding: $download-btn-pt-pb $download-btn-pl-pr;
+        }
+    }
+}
+@media screen and (max-width: 810px){
+    .bg-downloadSection{
+        padding-top: $mb * 1.75; 
+    }
+    .downloadSection{
+        flex-direction: column;
+        &-leftSide{
+            &-title,&-text{
+                text-align: $position;
+            }     
+        }
+        &-rightSide{
+            &-btn{
+                padding: $download-btn-pt-pb / 2 $download-btn-pl-pr / 2;
+            }
+        }
+    }
+}

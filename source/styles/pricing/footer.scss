@@ -1,0 +1,26 @@
+.bg-footer{
+    background-color: $footer-bg-color;
+    min-height: $footer-height;
+    // padding-top: $mb;
+    box-sizing: border-box;
+}
+.footer{
+    min-height: $footer-height;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $space;
+    align-items: $position;
+    &-copyRight{
+        &-text{
+            margin: $zero-size;
+        }
+    }
+    &-socialNetworks-links{
+        &-link{
+            margin-right: $mb / 2;
+            &:last-child{
+                margin-right: $zero-size;
+            }
+        }
+    }
+}

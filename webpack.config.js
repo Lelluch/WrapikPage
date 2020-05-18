@@ -7,7 +7,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     'Home': './source/index.js',
-    'AboutUs': './source/aboutUs.js'
+    'AboutUs': './source/aboutUs.js',
+    'Pricing': './source/pricing.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -47,6 +48,11 @@ module.exports = {
       chunks: ['AboutUs'],
       filename: 'aboutUs.html',
       template: './source/aboutUs.pug'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['Pricing'],
+      filename: 'pricing.html',
+      template: './source/pricing.pug'
     })
   ],
   module: {

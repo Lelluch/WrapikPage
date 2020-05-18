@@ -2,13 +2,13 @@ mixin block (url,head,text,className)
     div(class=className + "-block")
         img(class=className + "-img",  src=url, alt="picture")
         h3(class=className + "-title")=head
-        p(class=className + "-text")=text
+        p(class=className + "-text")!=text
 
 mixin sectionsHeader (head,text,className)
-    h2(class=className + "-title")=head
+    h2(class=className + "-title")!=head
     hr(class=className + "-line")
     if(text)
-        p(class=className + "-text")=text
+        p(class=className + "-text")!=text
 
 mixin listCreator (url,text,className)
     ul(class=className + "-list")

@@ -1,25 +1,10 @@
 .bg-header{
-    display: grid;
-    background-image: url(images/header2.png);
-    background-size: cover;
-    position: relative;
-    background-position: $position;
-    align-content: $position;
-
-    &::before {
-        content: "";
-        background-color: $header-bg-color;
-        position: absolute;
-        top: $zero-size;
-        left: $zero-size;
-        bottom: $zero-size;
-        right: $zero-size;
-        opacity: 0.9;
-    }
+    display: flex;
+    align-items: $position;
+    min-height: $nav-height;
+    background-color: $secondSection-bg-color;
     .header{
         width: 100%;
-        z-index: 1;
-        height: $header-height;
         &-sides{
             display: flex;
             justify-content: $space;
@@ -27,7 +12,6 @@
         &-left,&-right{
             display: flex;
             align-items: $position;
-            height: $nav-height;
         }
         &-hidden-block{
             display: none;
@@ -40,9 +24,6 @@
                 margin-right: $nav-rightSide-space;
             }
         }
-        &-home-link,&-tel-text,&-title,&-text,&-btn{
-            color:$text-color-header;
-        }
         &-home-link{
             font-family: $ff-someText;
             font-size: $font-main*2.2;
@@ -50,6 +31,7 @@
             padding-right: $nav-leftSide-space/2;
             border-right: 1px solid $header-unActivLinks-color;
             transition: 0.5s;
+            color: $text-color-main;
             &:hover{
                 color: darken($color: $text-color-header, $amount: 100%);
             }
@@ -67,29 +49,12 @@
                 color: darken($color: $text-color-header, $amount: 100%);
             }
         }
-        &-main{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: $position;
-            align-items: $position;
-            height: $header-height - $nav-height;
-        }
-        &-text {
-            font-size: $font-main * 3.85;
-            width: 80%;
-            text-align: $position;
-            margin-bottom: $mb * 1.5;
-        }       
-        &-btn{          
-            padding: $header-btn-pt-pb $header-btn-pl-pr;
-        }
         &-tel-text,.nav-links{
             font-family: $ff-btn;
+            color: $text-color-second;
             font-weight: $font-weight-bold;
         }
-        .nav-links{
-            color:$header-unActivLinks-color; 
+        .nav-links{ 
             margin-right: $nav-rightSide-space; 
             transition: 0.5s;
             &:last-child{
@@ -103,7 +68,7 @@
                 }
             }
             &:hover{
-                color:$text-color-header;
+                color: darken($color: $text-color-second, $amount: 50%);
             }
         }
     }
@@ -119,12 +84,7 @@
         }
     }
     @media screen and (max-width: 500px){
-        .header{       
-            &-text{
-                width: auto;
-                font-size: $font-main * 2.47;
-                margin-bottom: $mb * 2.5;
-            }
+        .header{
             &-home-link{
                 padding-right: $nav-leftSide-space/4;
             }
@@ -145,10 +105,6 @@
             }
             &-title{
                 font-size: $font-main * 2;
-            }
-            &-text{
-                font-size: $font-main * 2;
-                
             }
         }   
     }
