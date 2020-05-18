@@ -8,7 +8,8 @@ module.exports = {
   entry: {
     'Home': './source/index.js',
     'AboutUs': './source/aboutUs.js',
-    'Pricing': './source/pricing.js'
+    'Pricing': './source/pricing.js',
+    'ContactUs': './source/contactUs.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -53,6 +54,11 @@ module.exports = {
       chunks: ['Pricing'],
       filename: 'pricing.html',
       template: './source/pricing.pug'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['ContactUs'],
+      filename: 'contactUs.html',
+      template: './source/contactUs.pug'
     })
   ],
   module: {

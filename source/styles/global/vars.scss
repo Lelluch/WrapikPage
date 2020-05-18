@@ -13,6 +13,7 @@ $btn-color-shop: #83a7a5;
 $btn-color-header: #6a7f7f;
 $btn-text-color: #ffffff;
 $search-bg-color: #eef1ec;
+$border-color: #c1d3d2;
 
 $header-bg-color: #325f5f;
 $firstSection-bg-color: #ffffff;
@@ -23,6 +24,7 @@ $shopSection-bg-color: #ffffff;
 $infoSection-bg-color: #ffffff;
 $helpSection-bg-color: #ffffff;
 $lastSection-bg-color: #ffffff;
+$formSection-bg-color: #ffffff;
 $footer-bg-color: #ffffff;
 
 $header-unActivLinks-color: #bdc8c8;
@@ -37,6 +39,7 @@ $line-width: 65px;
 $zero-size: 0;
 
 $nav-height: 85px;
+$mapSection-height: 400px;
 $header-height: 660px;
 $firstSection-height: 985px;
 $Sections-height: 665px;
@@ -46,6 +49,7 @@ $infoSection-height: 248px;
 $helpSection-height: 312px;
 $downloadSection-height: 200px;
 $lastSection-height: 288px;
+$formSection-height: 764px;
 $footer-height: 65px;
 $section-header-text-width: 650px;
 
@@ -61,6 +65,12 @@ $shop-btn-pl-pr: 25px;
 $download-btn-pt-pb: 17px;
 $download-btn-pl-pr: 22px;
 $search-pl-pr: 16px;
+$form-btn-pt-pb: 17px;
+$form-btn-pl-pr: 43px;
+$form-input-pt-pb: 15px;
+$form-input-pl-pr: 18px;
+$formSection-info-pt-pb: 36px;
+$formSection-info-pl-pr: 41px;
 
 $mb: 20px;
 
@@ -79,3 +89,4 @@ $search-input-width: 200px;
 $search-input-height: 35px;
 $search-palace-width: 240px;
 $search-submit-width-height: 18px;
+$btn-submit-width:192px;

@@ -6,6 +6,8 @@
 .btn{
     color: $btn-text-color;
     font-family: $ff-btn;
+    border: none;
+    font-weight: $font-weight-bold;
     border-radius: $b-radius;
     text-transform: uppercase;
     background-color: $btn-color-shop;

@@ -1,0 +1,113 @@
+.bg-formSection {
+  background-color: $formSection-bg-color;
+  min-height: $formSection-height;
+  padding-top: $mb * 4;
+  box-sizing: border-box;
+}
+.formSection {
+  &-header > .sections-header-text {
+    margin-bottom: $mb * 3.9;
+  }
+  &-sides {
+    display: flex;
+    justify-content: $position;
+  }
+  &-leftSide {
+    width: 48.2%;
+    margin-right: $mb * 3.3;
+    &-form {
+      display: flex;
+      flex-direction: column;
+      &-name,
+      &-email,
+      &-phone,
+      &-textarea {
+        width: 100%;
+        border: 1px solid $text-color-second;
+        margin-bottom: $mb * 1.3;
+        font-weight: $font-weight-bold;
+        box-sizing: border-box;
+        &:placeholder-shown {
+          padding: $form-input-pt-pb $form-input-pl-pr;
+          color: $text-color-second;
+        }
+      }
+      &-textarea {
+        resize: none;
+        min-height: 124px;
+      }
+      &-btn {
+        max-width: $btn-submit-width;
+        padding: $form-btn-pt-pb $form-btn-pl-pr;
+        margin-bottom: $mb * 3.35;
+        &:hover {
+          background-color: darken($color: $btn-color-main, $amount: 20%);
+        }
+      }
+    }
+  }
+  &-rightSide {
+    &-blocks {
+      display: flex;
+      flex-direction: column;
+      border: 2px dashed $border-color;
+      padding: $formSection-info-pt-pb $formSection-info-pl-pr;
+      &-title {
+        text-transform: uppercase;
+        margin-bottom: $mb * 1.2;
+      }
+      &-block {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        grid-gap: 10px;
+        margin-bottom: $mb * 0.75;
+        &-text {
+          margin-bottom: $zero-size;
+          color: $text-color-second;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .formSection {
+    &-leftSide {
+      width: 48.2%;
+      margin-right: $mb;
+    }
+    &-rightSide {
+      &-blocks {
+        padding: $formSection-info-pt-pb / 2 $formSection-info-pl-pr / 2;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .formSection {
+    &-leftSide {
+      width: 90%;
+      margin-right: $zero-size;
+      &-form {
+        align-items: $position;
+      }
+    }
+    &-rightSide {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .formSection {
+    &-header > .sections-header-title {
+      font-size: $font-main * 2.08;
+    }
+    &-leftSide {
+      &-form {
+        &-btn {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
