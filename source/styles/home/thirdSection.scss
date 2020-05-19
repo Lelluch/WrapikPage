@@ -26,7 +26,8 @@
   &-rightSide {
     display: flex;
     position: relative;
-    &-leftArrow, &-rightArrow{
+    &-leftArrow,
+    &-rightArrow {
       visibility: hidden;
       display: flex;
       justify-content: $position;
@@ -34,45 +35,57 @@
       width: 15%;
       height: 80%;
       z-index: 1;
-      background-color: #ffff;
-      opacity: 0.5;
       font-size: 50px;
       position: absolute;
       top: 10%;
       cursor: pointer;
+      &:hover {
+        color: lighten($color: $text-color-main, $amount: 20%);
+      }
     }
-    &-leftArrow{
-     left: -10%;
+    &-leftArrow {
+      left: -10%;
     }
-    &-rightArrow{
+    &-rightArrow {
       right: -10%;
     }
     &-foto {
       max-width: $foto-width;
       min-height: $foto-height;
       border-radius: 50%;
+      will-change: transform;
       transition: 0.5s;
     }
   }
 }
 @media screen and (max-width: 810px) {
-  .thirdSection-leftSide {
-    margin-right: $mb;
+  .thirdSection {
+    &-leftSide {
+      margin-right: $mb;
+    }
+    &-rightSide {
+      &-leftArrow {
+        left: -5%;
+      }
+      &-rightArrow {
+        right: -5%;
+      }
+    }
   }
 }
 @media screen and (max-width: 710px) {
-    .bg-thirdSection{
-        padding-top: $mb * 5;
-    }
+  .bg-thirdSection {
+    padding-top: $mb * 5;
+  }
   .thirdSection {
-      flex-wrap: wrap;
-      justify-content: $position;
+    flex-wrap: wrap;
+    justify-content: $position;
     &-leftSide {
       order: 1;
       max-width: 90%;
       margin-right: $zero-size;
-      &-office{
-          margin-bottom: $mb * 5;
+      &-office {
+        margin-bottom: $mb * 5;
       }
     }
     &-rightSide {
@@ -81,16 +94,16 @@
     }
   }
 }
-@media screen and (max-width: 370px){
-    .thirdSection {
-        flex-wrap: wrap;
-        justify-content: $position;
-      &-rightSide {
-        max-width: 90%;
-        &-foto{
-            max-width: 100%;
-            min-height: 100%;
-        }
+@media screen and (max-width: 370px) {
+  .thirdSection {
+    flex-wrap: wrap;
+    justify-content: $position;
+    &-rightSide {
+      max-width: 90%;
+      &-foto {
+        max-width: 100%;
+        min-height: 100%;
       }
     }
+  }
 }

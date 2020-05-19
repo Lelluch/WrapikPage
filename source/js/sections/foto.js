@@ -1,27 +1,35 @@
 export function foto() {
   //   variables
   const foto = document.querySelector(".thirdSection-rightSide-foto");
+  const fotoBlock = document.querySelector(".thirdSection-rightSide");
   const blockOne = document.querySelector(".thirdSection-rightSide-leftArrow");
   const blockTwo = document.querySelector(".thirdSection-rightSide-rightArrow");
   let arrowImage = ["images/girl.png", "images/cat.jpg"];
   let counter = 0;
+  let timer;
+  
   // events
-  foto.addEventListener("mouseover", arrow);
-  foto.addEventListener("mouseout", hidden);
-  blockOne.addEventListener("mouseover", arrow);
-  blockOne.addEventListener("mouseout", hidden);
-  blockTwo.addEventListener("mouseover", arrow);
-  blockTwo.addEventListener("mouseout", hidden);
+  fotoBlock.addEventListener("mouseover",visible);
+  fotoBlock.addEventListener("mouseout",hidden);
   blockOne.addEventListener("click", left);
   blockTwo.addEventListener("click", right);
+
   // functions
-  function arrow() {
-    foto.style.transform = "scale(120%)";
+  timer=setInterval(right,5000);
+
+  function visible() {
+    clearInterval(timer);
+    if (window.matchMedia("(max-width: 810px)").matches) {
+      foto.style.transform = "scale(1.1)";
+    } else {
+      foto.style.transform = "scale(1.2)";
+    }  
     blockOne.style.visibility = "visible";
     blockTwo.style.visibility = "visible";
   }
   function hidden() {
-    foto.style.transform = "scale(100%)";
+    timer=setInterval(right,5000);
+    foto.style.transform = "scale(1)";
     blockOne.style.visibility = "hidden";
     blockTwo.style.visibility = "hidden";
   }
